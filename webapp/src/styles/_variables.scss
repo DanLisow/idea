@@ -1,0 +1,26 @@
+:root {
+  --container-width: 1720rem;
+  --font-main: "Manrope", "sans-serif";
+
+  --black: #221e1f;
+  --black-hover: #393939;
+  --white: #fff;
+  --gray-light: #f2f4f5;
+  --gray-more: #dfe5ed;
+  --gray-dark: #79808a;
+  --gray-blue: #adb6c2;
+  --red: #dd2929;
+  --green: #56c863;
+
+  --r-xs: 4rem;
+  --r-s: 6rem;
+  --r-m: 10rem;
+
+  --anim: cubic-bezier(0.14, 0.43, 0.73, 1);
+  --anim-ex: cubic-bezier(0.38, 0.005, 0.215, 1);
+
+  --transition: all 0.4s var(--anim);
+  --transition-0: all 0.3s var(--anim-ex);
+  --transition-1: all 0.4s var(--anim-ex);
+  --transition-2: all 0.6s var(--anim-ex);
+}

@@ -1,0 +1,19 @@
+.header {
+  border-bottom: 1rem solid var(--gray-blue);
+  &__inner {
+    @include flex(center, 40);
+    padding-block: 15rem;
+  }
+  &__menu {
+    &-list {
+      @include flex(center, 30);
+    }
+    &-item {
+      & a {
+        font-weight: 500;
+        text-decoration: underline;
+        text-underline-offset: 3rem;
+      }
+    }
+  }
+}

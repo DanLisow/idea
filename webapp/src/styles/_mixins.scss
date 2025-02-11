@@ -1,0 +1,98 @@
+@mixin flex($ai: false, $cg: 0, $jc: false, $fd: false, $rg: 0) {
+  display: flex;
+
+  @if $ai {
+    align-items: #{$ai};
+  }
+
+  @if $jc {
+    justify-content: #{$jc};
+  }
+
+  @if $fd {
+    flex-direction: #{$fd};
+  }
+
+  @if $cg != 0 {
+    column-gap: #{$cg}rem;
+  }
+
+  @if $rg != 0 {
+    row-gap: #{$rg}rem;
+  }
+}
+
+@mixin btn-padding($p-inline: 0, $p-block: 20, $w: false) {
+  @if $w {
+    width: 100%;
+  }
+
+  @if $p-inline != 0 {
+    padding: #{$p-block}rem #{$p-inline}rem;
+  } @else {
+    padding: #{$p-block}rem 0;
+  }
+}
+
+@mixin img-size($contain: false) {
+  width: 100%;
+  height: 100%;
+
+  @if $contain {
+    object-fit: contain;
+  } @else {
+    object-fit: cover;
+  }
+}
+
+@mixin abs-full {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin full-button {
+  width: 100%;
+  padding-inline: 0;
+}
+
+@mixin inset-area($in: "-20rem 0") {
+  content: "";
+  position: absolute;
+  inset: #{$in};
+}
+
+@mixin op-anim($open: false) {
+  @if $open {
+    opacity: 1;
+    pointer-events: all;
+  } @else {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+@mixin p-section {
+  padding: 100rem 0;
+
+  @include tablet {
+    padding: 40rem 0;
+  }
+}
+
+@mixin upper-500 {
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+@mixin iconMask($link) {
+  mask-image: $link;
+  mask-size: 100%;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  width: 24rem;
+  height: 24rem;
+  background-color: currentColor;
+}

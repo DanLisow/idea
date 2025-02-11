@@ -1,35 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { TrpcProvider } from "./lib/trpc";
+import { AllIdeasPage } from "./pages/AllIdeasPage";
+import { MainPage } from "./pages/MainPage";
+import { Layout } from "./components/Layout";
+import { ViewIdeaPage } from "./pages/ViewIdeaPage";
+import * as routes from "./lib/routes";
+import "./styles/style.scss";
+import { NewIdeaPage } from "./pages/NewIdeaPage";
+import { SignUpPage } from "./pages/SignUpPage";
+import { SignInPage } from "./pages/SignInPage";
+import { SignOutPage } from "./pages/SignOutPage";
+import { EditIdeaPage } from "./pages/EditIdeaPage";
+import { AppContextProvider } from "./lib/ctx";
+import { Loader } from "./components/utils/Loader";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export const App = () => {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
-
-export default App
+    <TrpcProvider>
+      <AppContextProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path={routes.getSignOutRoute()} element={<SignOutPage></SignOutPage>}></Route>
+            <Route element={<Layout></Layout>}>
+              <Route path={routes.getMainPage()} element={<MainPage></MainPage>}></Route>
+              <Route path={routes.getSignUpRoute()} element={<SignUpPage></SignUpPage>}></Route>
+              <Route path={routes.getSignInRoute()} element={<SignInPage></SignInPage>}></Route>
+              <Route path={routes.getAllIdeasRoute()} element={<AllIdeasPage></AllIdeasPage>}></Route>
+              <Route path={routes.getViewIdeaRoute(routes.viewIdeaRouteParams)} element={<ViewIdeaPage></ViewIdeaPage>}></Route>
+              <Route path={routes.getNewIdeaRoute()} element={<NewIdeaPage></NewIdeaPage>}></Route>
+              <Route path={routes.getEditIdeaRoute(routes.editIdeaRouteParams)} element={<EditIdeaPage></EditIdeaPage>}></Route>
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </AppContextProvider>
+    </TrpcProvider>
+  );
+};

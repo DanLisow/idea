@@ -1,0 +1,15 @@
+.add-form {
+  position: relative;
+  &__instance {
+    max-width: 560rem;
+    margin-top: 60rem;
+  }
+
+  &__result {
+    position: absolute;
+    top: calc(100% + 40rem);
+    padding: 20rem;
+    border-radius: var(--r-s);
+    color: var(--white);
+  }
+}

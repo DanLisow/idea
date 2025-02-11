@@ -1,0 +1,13 @@
+@import "../../../styles/style.scss";
+
+.logo {
+  display: inline-block;
+  &-link {
+    display: inherit;
+    padding: 10rem 16rem;
+    border: 1rem solid var(--black);
+
+    @include f-40;
+    font-weight: 600;
+  }
+}

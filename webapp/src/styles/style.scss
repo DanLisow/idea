@@ -1,0 +1,20 @@
+@import "normalize", "fonts", "media", "mixin-fonts", "mixins", "variables", "utils", "globals";
+
+// ШапОчка
+@import "blocks/header/header";
+
+// Утилиты тип
+@import "blocks/utils/form/form";
+
+// Главная
+@import "blocks/main/main";
+
+// Идеи
+@import "blocks/ideas/idea-list/idea-list";
+@import "blocks/ideas/idea-card/idea-card";
+@import "blocks/ideas/idea/idea";
+// Форма идеи
+@import "blocks/add-form/add-form";
+
+// Регистрация
+@import "blocks/auth/auth";

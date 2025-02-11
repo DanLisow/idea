@@ -1,0 +1,43 @@
+.idea {
+  &__info {
+    max-width: 820rem;
+  }
+  &__title {
+    @include f-40;
+    text-wrap: balance;
+  }
+  &__date {
+    width: fit-content;
+    margin: 15rem 0;
+    padding: 10rem;
+    border-radius: var(--r-s);
+    background: var(--gray-light);
+    font-weight: 500;
+  }
+  &__description {
+    text-wrap: balance;
+  }
+
+  &__content {
+    margin-top: 50rem;
+    line-height: 1.3;
+  }
+
+  &__actions {
+    margin-top: 40rem;
+    @include flex(stretch, 20);
+  }
+  &__button {
+    display: inline-block;
+    padding: 14rem 36rem;
+    border-radius: var(--r-s);
+
+    &.edit {
+      background: var(--gray-more);
+    }
+    &.remove {
+      background: var(--red);
+      color: var(--white);
+    }
+  }
+}

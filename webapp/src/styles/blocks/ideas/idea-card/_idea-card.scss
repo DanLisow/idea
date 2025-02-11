@@ -1,0 +1,22 @@
+.idea-card {
+  padding: 16rem 32rem;
+  border-radius: var(--r-s);
+  background: var(--gray-light);
+
+  &__name {
+    display: block;
+    margin-bottom: 10rem;
+
+    @include f-24;
+    font-weight: 600;
+  }
+
+  &__link {
+    display: block;
+    margin-top: 20rem;
+    padding-block: 10rem;
+    border: 1rem solid var(--black);
+    border-radius: var(--r-xs);
+    text-align: center;
+  }
+}

@@ -1,0 +1,13 @@
+.auth {
+  flex: 1 1 auto;
+
+  @include flex(center, $jc: center);
+
+  &__inner {
+    max-width: 640rem;
+    margin: 0 auto;
+  }
+  &__form {
+    position: relative;
+  }
+}
